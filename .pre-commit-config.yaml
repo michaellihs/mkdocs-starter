@@ -1,0 +1,33 @@
+default_install_hook_types:
+  - pre-commit
+  - prepare-commit-msg
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-executables-have-shebangs
+      - id: check-symlinks
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: check-json
+      - id: check-yaml
+        args: [ --allow-multiple-documents, --unsafe ]
+      - id: forbid-new-submodules
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [ --markdown-linebreak-ext=md ]
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        args: ["--fix"]
+  - repo: https://github.com/rkotze/git-mob
+    rev: v3.2.3
+    hooks:
+      - id: add-coauthors
+        stages: [ 'prepare-commit-msg' ]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks

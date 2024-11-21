@@ -1,0 +1,40 @@
+site_name: mkdocs Starter Kit                               # replace with your title
+repo_name: mkdocs-starter                                   # replace with your repo name
+repo_url: https://github.com/michaellihs/mkdocs-starter     # replace with your repo
+docs_dir: docs
+exclude_docs: |
+  - excluded-doc.md
+
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - content.action.edit
+  icon:
+    edit: material/pencil
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+nav:
+  - '🏠 Home': 'index.md'
+
+plugins:
+  - markdownextradata:
+      data: data
+  - kroki:
+      FencePrefix: ""
+  - search
+  - techdocs-core
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
