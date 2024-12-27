@@ -7,7 +7,7 @@ This repo provides a pre-configured [mkdocs](https://www.mkdocs.org/) for render
 - developer tools for linting and code checks
 - a GitHub workflow to publish the rendered documentation as GitHub pages
 
-Here cou can find the [User Documentation](https://michaellihs.github.io/mkdocs-starter).
+Here cou can find the [User Documentation](https://michaellihs.github.io/mkdocs-starter) of this starter kit.
 
 ## Prerequisites
 
