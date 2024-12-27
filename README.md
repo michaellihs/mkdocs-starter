@@ -13,7 +13,7 @@ These are the prerequisites for working with this repository:
 
 - Python
 
-## Getting startred
+## Getting started
 
 1. Create a virtual Python environment to not mess up your system installation of Python
 

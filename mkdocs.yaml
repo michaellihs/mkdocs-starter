@@ -25,12 +25,18 @@ theme:
 
 nav:
   - '🏠 Home': 'index.md'
+  - 'Getting Started': 'getting-started.md'
+  - 'Starter Kit Contents':
+    - 'mkdocs.yaml': 'starter-kit/mkdocs-yaml.md'
+    - 'GitHub Workflow': 'starter-kit/github-workflow.md'
+    - 'Markdown Extra Data': 'starter-kit/markdown-extra-data.md'
+    - 'Shell Helper': 'starter-kit/shell-helper.md'
+    - 'Markdown Linter': 'starter-kit/markdown-linter.md'
+    - 'pre-commit Hooks': 'starter-kit/pre-commit-hooks.md'
 
 plugins:
   - markdownextradata:
       data: data
-  - kroki:
-      FencePrefix: ""
   - search
   - techdocs-core
 
@@ -38,3 +44,5 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.highlight:
+      linenums: false
