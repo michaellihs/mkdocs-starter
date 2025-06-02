@@ -1,6 +1,6 @@
 # GitHub Workflow for mkdocs
 
-The included [workflow](../../.github/workflows/ci.yaml) builds the documentation and publishes is as [GitHub pages](https://pages.github.com/). After a successful workflow run, the documentation is accessible under `https://{userid}.github.io/{reponame}`.
+The included `.github/workflows/ci.yaml` builds the documentation and publishes is as [GitHub pages](https://pages.github.com/). After a successful workflow run, the documentation is accessible under `https://{userid}.github.io/{reponame}`.
 
 ## Setting up the workflows for this repo
 
