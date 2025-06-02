@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  kroki:
+    image: yuzutech/kroki
+    container_name: kroki
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      - KROKI_MERMAID_HOST=kroki-mermaid
+      - KROKI_LISTEN=0.0.0.0:8001
+
+  kroki-mermaid:
+    image: yuzutech/kroki-mermaid
+    container_name: kroki-mermaid
+    restart: unless-stopped
+    environment:
+      - KROKI_MERMAID_HOST=0.0.0.0
+    ports:
+      - "8002:8002"  # Exposed only if needed

@@ -21,20 +21,36 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-      - name: Run Markdownlint
-        run: npx markdownlint-cli .
-      - uses: actions/setup-python@v5
+      - name: run markdownlint-cli
+        shell: bash
+        run: |
+          npx markdownlint-cli docs -i docs/docs_old
+      - name: setup python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: actions/cache@v4
+      - name: create github cache id
+        shell: bash
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - name: cache mkdocs
+        uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install -r requirements.txt
-      - run: mkdocs build
+      - name: install python requirements
+        shell: bash
+        run: pip install -r requirements.txt
+      - name: build and validate mkdocs
+        shell: bash
+        run: mkdocs build --strict
+      - name: render kroki diagrams
+        shell: bash
+        run: |
+          docker compose up -d
+          sleep 5
+          scripts/kroki2svg.sh
       - name: upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
