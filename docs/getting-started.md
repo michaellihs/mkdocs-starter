@@ -20,7 +20,7 @@ repo_url: https://github.com/michaellihs/mkdocs-starter     # replace with your 
 
 2. Add a file to the navigation structure
 
-    Within the [`mkdocs.yaml`](../mkdocs.yaml) add the file in the `nav` section:
+    Within the `mkdocs.yaml` (in the root of this repository) add the file in the `nav` section:
 
     ```yaml
     nav:
