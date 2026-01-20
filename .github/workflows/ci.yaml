@@ -52,7 +52,7 @@ jobs:
           sleep 5
           scripts/kroki2svg.sh
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./site
       - name: Deploy to GitHub Pages
