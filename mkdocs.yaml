@@ -40,9 +40,9 @@ plugins:
   - search
   - techdocs-core
   - kroki:
-      FileTypes:
+      file_types:
         - svg
-      ServerURL: 'http://localhost:8001'
+      server_url: 'http://localhost:8001'
   - glightbox:
       touchNavigation: true
       loop: false
