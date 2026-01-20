@@ -14,29 +14,36 @@ Here cou can find the [User Documentation](https://michaellihs.github.io/mkdocs-
 These are the prerequisites for working with this repository:
 
 - Python
+- `uv`
 
 ## Getting started
 
-1. Create a virtual Python environment to not mess up your system installation of Python
+1. If you don't have `uv` installed
 
    ```bash
-   python3 -m venv .venv && source ./.venv/bin/activate
+   brew install uv
    ```
 
-2. Install Python dependencies
+2. Create a virtual Python environment to not mess up your system installation of Python
 
    ```bash
-   pip install -r requirements.txt
+   uv venv --python 3.13 && source .venv/bin/activate
    ```
 
-3. Install `pre-commit`
+3. Install Python dependencies
+
+   ```bash
+   uv pip install -r requirements.txt
+   ```
+
+4. Install `pre-commit`
 
    ```bash
    brew install pre-commit
    pre-commit install
    ```
 
-4. Time to spin up `mkdocs`
+5. Time to spin up `mkdocs`
 
    ```bash
    mkdocs serve
