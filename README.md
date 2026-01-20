@@ -50,3 +50,14 @@ These are the prerequisites for working with this repository:
    ```
 
    This will start a local webserver at [http://127.0.0.1:8000/](http://127.0.0.1:8000/) that shows your documentation.
+
+## Setting up GitHub Pages
+
+When you see this error message in the workflow:
+
+```text
+Error: Creating Pages deployment failed
+Error: HttpError: Not Found
+```
+
+then you have to go to the `Settings / Pages` of the repo, and for "Build and Deployment", select "GitHub Actions".
